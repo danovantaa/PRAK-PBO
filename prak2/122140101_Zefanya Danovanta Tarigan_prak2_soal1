@@ -1,5 +1,5 @@
 class Mahasiswa:
-    def _init_(self, nama, NIM, angkatan, isMahasiswa = True ):
+    def __init__(self, nama, NIM, angkatan, isMahasiswa = True ):
         self.nama = nama
         self.NIM = NIM
         self.angkatan = angkatan
@@ -18,8 +18,8 @@ class Mahasiswa:
         self.NIM = NIM
 
     def display_info(self):
-        return f"Nama : {self.get_nama()} \nNIM : {self.get_NIM()} \nAngkatan: {self.angkatan} \n " \
-               f"Status Mahasiswa: {'Aktif' if self.isMahasiswa else 'Cuti'}"
+        return f"Nama : {self.get_nama()} \nNIM : {self.get_NIM()} \nAngkatan: {self.angkatan} \n" \
+               f"Status Mahasiswa: {'Aktif' if self.angkatan <=2017 and self.isMahasiswa else 'Non aktif'}"
 
     def Cek_Status(self):
         if self.angkatan <= 2017 :
