@@ -18,11 +18,11 @@ class Mahasiswa:
         self.NIM = NIM
 
     def display_info(self):
-        return f"Nama : {self.get_nama()} \nNIM : {self.get_NIM()} \nAngkatan: {self.angkatan} \n" \
-               f"Status Mahasiswa: {'Aktif' if self.angkatan <=2017 and self.isMahasiswa else 'Non aktif'}"
+        return f"Nama : {self.get_nama()} \nNIM : {self.get_NIM()} \nAngkatan : {self.angkatan} \n" \
+               f"Status Mahasiswa : {'Aktif' if self.angkatan >=2017 and self.isMahasiswa else 'Non aktif'}"
 
     def Cek_Status(self):
-        if self.angkatan <= 2017 :
+        if self.angkatan <= 2017 or not self.isMahasiswa :
             return "Mahasiswa Sudah Tidak berkuliah lagi di ITERA "
         else : 
             return "Mahasiswa Aktif"
